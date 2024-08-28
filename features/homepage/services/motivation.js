@@ -6,7 +6,7 @@ const genAI = new GoogleGenerativeAI(
 
 const getMotivationMessage = async () => {
 	const model = genAI.getGenerativeModel({ model: 'gemini-pro' })
-	const prompt = `Sen bir motivasyon uzmanısın. Kısa ve etkili bir motivasyon mesajı yaz. Mesajı doğrudan kullanıcıya hitap ederek oluştur. Genel bir hedef veya amaç belirt. Mesaj 2-3 cümleden oluşsun ve 200 karakteri geçmesin. Sadece motivasyon mesajını döndür, başka bir şey ekleme.`
+	const prompt = `Sen bir motivasyon uzmanısın. Kısa ve etkili bir motivasyon mesajı yaz. Mesajı doğrudan kullanıcıya hitap ederek oluştur. Mesaj 3-4 cümleden oluşsun ve 300 karakteri geçmesin. Sadece motivasyon mesajını döndür, başka bir şey ekleme. Mesajın sonunda hedefe yönelik emoji kullan. Hedefe yönelik özel motivasyon mesajı yaz.`
 
 	try {
 		const result = await model.generateContent(prompt)
