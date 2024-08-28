@@ -31,7 +31,7 @@ const MotivationForm = () => {
 	return (
 		<GlowingStarsBackgroundCard className="mx-auto">
 			<div className="space-y-4">
-				<GlowingStarsTitle>Motivasyon Mesajı</GlowingStarsTitle>
+				<GlowingStarsTitle>Motivasyon AI</GlowingStarsTitle>
 				<GlowingStarsDescription>
 					Hedefini gir, sana özel bir motivasyon mesajı atalım!
 				</GlowingStarsDescription>
@@ -40,7 +40,7 @@ const MotivationForm = () => {
 					onSubmit={onSubmit}
 				/>
 				{message && (
-					<p className="text-black text-center mt-6 font-semibold text-sm">
+					<p className="text-white text-center mt-6 font-semibold text-sm">
 						<span className="p-5">
 							{message.charAt(0).toUpperCase() + message.slice(1)}
 						</span>
