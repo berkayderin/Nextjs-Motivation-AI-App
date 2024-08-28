@@ -5,6 +5,7 @@ import {
 } from '@/components/ui/glowing-stars'
 import React, { useState } from 'react'
 
+import { Loader2 } from 'lucide-react'
 import { PlaceholdersAndVanishInput } from '@/components/ui/placeholders-and-vanish-input'
 import useMotivationMessage from '../queries/useMotivationMessage'
 
@@ -39,15 +40,20 @@ const MotivationForm = () => {
 					placeholders={placeholders}
 					onSubmit={onSubmit}
 				/>
-				{message && (
-					<p className="text-white text-center mt-6 font-semibold text-sm">
+				{createMotivationMessage.isLoading && (
+					<div className="flex justify-center">
+						<Loader2 className="animate-spin text-white" size={24} />
+					</div>
+				)}
+				{message && !createMotivationMessage.isLoading && (
+					<p className="text-white font-semibold text-sm">
 						<span className="p-5">
 							{message.charAt(0).toUpperCase() + message.slice(1)}
 						</span>
 					</p>
 				)}
 				{createMotivationMessage.isError && (
-					<p className="text-sm text-red-500 text-center mt-4">
+					<p className="text-sm text-red-500 text-center">
 						Bir hata oluştu. Lütfen tekrar deneyin.
 					</p>
 				)}
